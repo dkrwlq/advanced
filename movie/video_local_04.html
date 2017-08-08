@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>video tag</title>
+  <script src="js/lib/jquery-3.2.1.min.js"></script>
+  <style>
+    .video{
+      /*float:right; */
+      /* 늘어나는 기준은 위치를 어디로 지정해주느냐... */
+
+      position:absolute;
+      top:0;
+      right:0;
+      transition: all 1s ease-out;
+    }
+
+    .video:hover{
+      width:80%;
+      height:80%;
+    }
+  </style>
+  <script>
+    $(function(){
+
+      /*
+        document.getElementById('video') : Javascript D.O.M
+
+        $('#video') : jQuery D.O.M
+
+        $('#video')[0] : Javascript D.O.M
+
+        => document.getElementById('video'), $('#video')[0] : 두 가지는 같은 DOM
+       */
+
+      $('.video').on('mouseenter', function(){
+
+        // play() : HTML5 video API
+        $('.video')[0].play();
+
+      });
+
+      $('.video').on('mouseleave', function(){
+
+        // play() : HTML5 video API
+        $('.video')[0].pause();
+
+      });
+
+    });
+  </script>
+</head>
+<body>
+
+<video id="video" class="video" width="560" height="315">
+  <source src="src/video1.mp4" type="video/mp4" />
+</video>
+
+</body>
+</html>

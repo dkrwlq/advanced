@@ -1,0 +1,290 @@
+.header{
+  height:60px;
+  border-bottom:1px solid #ddd;
+  padding:18px;
+  box-sizing:border-box;
+
+  .logo{
+    width:227px;
+    height:22px;
+    background:url(../images/logo_sprite.png) no-repeat 0 0;
+    text-indent:-99999em;
+    float:left;
+  }
+
+}
+
+.gnb{
+  float:right;
+  position:relative;
+  top:8px;
+
+  &-list{
+
+    &-item{
+      float:left;
+      margin-left:151px;
+    }
+
+    &-link{
+      //font-family:'Stardos Stencil', 'cursive';
+      //font-size:16px;
+      //font-weight:700;
+
+      font:{
+        family:'Stardos Stencil', 'cursive';
+        size:16px;
+        weight:700;
+      }
+
+      &:hover{
+        text-decoration:line-through;
+      }
+
+      color:#000;
+      text-decoration:none;
+    }
+  }
+
+  &-toggle{
+    display: none;
+  }
+}
+
+.main-visual{
+
+  &-img{
+    display:block;
+    width:100%;
+  }
+}
+
+.text-section{
+
+  >.inner-text{
+    height:200px;
+    background:#ddd;
+
+    @extend %clearfix;
+  }
+
+  .def-list{
+    width:286px;
+    height:200px;
+    text-align:center;
+    padding:50px 34px 0;
+    box-sizing:border-box;
+    float:left;
+    margin-right:20px;
+
+    &:last-child{
+      margin-right:0;
+    }
+
+    &-title{
+      font-weight:700;
+    }
+
+    &-data{
+      font:{
+        size:13px;
+        weight:300;
+      }
+      line-height:1.2;
+      margin-top:20px;
+    }
+  }
+
+}
+
+.list-visual{
+
+  &-list{
+    @extend %clearfix;
+
+    &-item{
+      float:left;
+
+      &:nth-child(1){ width:50%; }
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5){ width:25%; }
+    }
+
+    &-img{
+      display:block;
+      width:100%;
+    }
+  }
+}
+
+.footer{
+  height:60px;
+  border-top:1px solid #ddd;
+  box-sizing:border-box;
+
+  &-address{
+    line-height:60px;
+    text-align:center;
+  }
+}
+
+// Tablet
+@media screen and (min-width:768px) and (max-width:1203px) {
+
+  .header{
+    padding:18px 20px 0;
+  }
+
+  .gnb-list-item{
+    margin-left:44px;
+  }
+
+  .text-section{
+
+    >.inner-text{
+      height:auto;
+    }
+
+    .def-list{
+      width:50%;
+      margin-right: 0;
+      padding:50px 47px 0;
+    }
+  }
+
+  .list-visual-list-item{
+
+    &:nth-child(2){width:50%}
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5){width:33.33%}
+
+  }
+}
+
+// Smart Phone
+@media screen and (max-width:767px) {
+
+  .header{
+    padding-top:20px;
+
+    .logo{
+      width:184px;
+      height:18px;
+      background-position:0 -42px;
+      margin:0 auto;
+      float:none;
+    }
+
+  }
+
+  .gnb{
+    float:none;
+    position:absolute;
+    display:none;
+    top: 60px;
+    width:100%;
+    background:#fff; // static 기본값(포지션 right 를 취소)
+    //display:none;
+
+    &-list{
+
+      &-item{
+        margin-left:0;
+        float:none;
+        border-bottom:1px solid #ddd;
+        box-sizing:border-box;
+        position:relative;
+
+        &:after{
+          content:"";
+          display:block;
+          width:7px;
+          height:10px;
+          background:url(../images/gnb_arrow.png) no-repeat 0 0;
+          position:absolute;
+          top:16px;
+          right:20px;
+        }
+      }
+
+      &-link{
+        display:block;
+        padding:13px 20px;
+      }
+    }
+
+    &-toggle{
+      display:block;
+      border:0;
+      padding:8px 0;
+      background:none;
+      position:absolute;
+      top:20px;
+      left:20px;
+
+      span{
+        display: block;
+        width:25px;
+        height:3px;
+        background:#000;
+        text-indent: -99999em;
+      }
+
+      &:before{
+        content:"";
+        display:block;
+        width:25px;
+        height:3px;
+        background:#000;
+        position:absolute;
+        top:0;
+
+      }
+
+      &:after{
+        content:"";
+        display:block;
+        width:25px;
+        height:3px;
+        background:#000;
+        position:absolute;
+        bottom:0;
+      }
+
+    }
+
+    &.on{
+      display:block;
+    }
+  }
+
+  .text-section{
+
+    >.inner-text{
+      height:auto;
+    }
+
+    .def-list{
+      width:100%;
+      margin-right: 0;
+      padding:50px 47px 0;
+    }
+  }
+
+  .list-visual-list-item{
+
+    &:nth-child(1){width:100%}
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5){width:50%}
+  }
+
+  .footer{
+    font-size:13px;
+  }
+
+}

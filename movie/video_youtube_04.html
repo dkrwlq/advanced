@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>video tag</title>
+  <script src="js/lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--<iframe src="주소?매개변수&매개변수&매개변수"></iframe>-->
+<iframe id="movie" src="https://www.youtube.com/embed/wctRcg67E_g?ecver=2&enablejsapi=1" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
+
+<script type="text/javascript">
+  /**
+   * Youtube API 로드
+   */
+
+  // createElement() : html 요소를 동적 생성 - script 태그를 생성
+  var tag = document.createElement('script');
+  // <script src="...">
+  tag.src = "https://www.youtube.com/iframe_api";
+
+  // 현재 script 태그 앞에 동적으로 생성한 script 태그를 삽입
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  /**
+   * onYouTubeIframeAPIReady 함수는 필수로 구현해야 한다.
+   * 플레이어 API에 대한 JavaScript 다운로드 완료 시 API가 이 함수 호출한다.
+   * 페이지 로드 시 표시할 플레이어 객체를 만들어야 한다.
+   */
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    // 새로운 동영상 이름은 iframe의 id와 연결됨
+    player = new YT.Player('movie');
+  }
+
+
+  $('#movie').on('mouseenter', function(){
+    player.playVideo();
+  });
+
+  $('#movie').on('mouseleave', function(){
+    player.pauseVideo();
+  });
+
+</script>
+
+</body>
+</html>

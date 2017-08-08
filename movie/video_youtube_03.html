@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>video tag</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    html, body{
+      height:100%;
+    }
+
+    .video-wrap{
+      width:100%;
+      height:100%;
+      overflow:hidden;
+    }
+
+    .video{
+      width: 1910px;
+      height: 1200px;
+      position: absolute;
+      top:-60px;
+      /*left:50%;*/
+    }
+
+    .dimmed{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: #000;
+      opacity:0.5;
+    }
+
+    .text{
+      width:600px;
+      margin:0 auto;
+      font-size:20px;
+      color:#fff;
+      line-height: 2;
+      position:relative;
+      z-index:10;
+    }
+
+    .bg-video{
+      width:100%;
+      height:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:0;
+    }
+  </style>
+  <script src="js/lib/jquery-3.2.1.min.js"></script>
+  <script>
+
+    $(function(){
+
+      $(window).on('resize', function(){
+
+        var winWidth = $(window).width();
+        var winHeight = $(window).height();
+        var movWidth;
+        var movHeight;
+
+        movWidth = winWidth;
+        movHeight = winHeight + 250;
+
+        $('.video').css({
+          width : movWidth,
+          height : movHeight
+//          'margin-top' : -( movHeight / 2 ),
+//          'margin-left' :  -( movWidth / 2 )
+        })
+
+      }).resize();
+    });
+
+  </script>
+</head>
+<body>
+
+<div class="bg-video">
+  <div class="video-wrap">
+    <iframe class="video" width="1280" height="900" src="https://www.youtube.com/embed/EHgeGRU3wDI?ecver=2&autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
+  </div>
+
+  <div class="dimmed"></div>
+</div>
+
+<div class="text">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aspernatur autem blanditiis, cumque ea eaque earum impedit nesciunt nisi nobis odio perferendis, quas tempore tenetur unde voluptates! Beatae, similique.
+</div>
+
+</body>
+</html>

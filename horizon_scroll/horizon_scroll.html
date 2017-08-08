@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Horizontal Scroll </title>
+  <link rel="stylesheet" href="reset.css" />
+  <style>
+    .container{
+      width:100%;
+      height:100%;
+      position:absolute;
+    }
+
+    .inner-box{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%); /*텍스트는 자기자신의 사이즈를 알수없음 따라 position 을 이용해서 가운데 배치를 해줄때 자기자신을 기준으로 변형을 하는 transform 을 활용해서 배치하자!*/
+    }
+
+    .list{
+      white-space: nowrap;
+    }
+
+    .list-item{ /* float 은 컨텐츠가 가로로 밀고 나가지 못한다. */
+      display:inline; /* white-space:nowrap (텍스트를 한줄로 만들어주는것)은 인라인요소에 해당 */
+      font-size:125px;
+      padding:0 100px;
+    }
+  </style>
+  <script src="lib/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+
+      var scrollAmount = 0;
+
+      $(window).on('mousewheel', function(e){ //매개변수 안에 e 를 넣어주면 이벤트 객체가 e 변수에 저장 된다.
+
+        scrollAmount += e.originalEvent.wheelDelta;
+
+        if( scrollAmount >= 0 ){
+          scrollAmount = 0;
+        }
+
+        if( scrollAmount <= -($('.list').width() - $(window).width()) ){
+          scrollAmount = -($('.list').width() - $(window).width());
+        }
+
+        $('body').stop().animate({ //animate 를 적용해줄려면 대상이 window 가 아닌 body 여야한다.
+          scrollLeft : -scrollAmount //스크롤 방향을 반대로 해주기위해 -를 붙인다.
+        });
+
+        /*
+
+        ** scrollLeft 함수를 사용해서 구현하기
+
+        $(window).scrollLeft(-scrollAmount/10);
+
+        - animate 함수는 시간을두고 움직임을 하게 하기 때문에 컴퓨터의 부하도 많이 걸리고
+          동작하는데 어색함이 있기때문에 다른 활용법을 사용해서 하는 방법을 알아보기!(과제)
+
+        */
+
+      });
+
+
+    });
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <div class="inner-box">
+    <ul class="list">
+      <li class="list-item">TITLE</li>
+      <li class="list-item">TITLE</li>
+      <li class="list-item">TITLE</li>
+      <li class="list-item">TITLE</li>
+      <li class="list-item">TITLE</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
