@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>입력 레이블</title>
+</head>
+<body>
+
+<!--
+
+  폼요소 사용시 반드시 label 태그를 사용해야 하며, label 태그의 for attribute 와
+  폼요소의 id attribute 를 같은 이름으로 연결해줘야 함
+
+ -->
+
+<div>
+  <label for="name">성명</label>
+  <input type="text" id="name" />
+</div>
+
+<div>
+  <label for="phone">전화번호</label>
+  <select id="phone">
+    <option>010</option>
+    <option>02</option>
+    <option>031</option>
+  </select>
+  <!--
+   label 과 연결할 수 없는 폼 요소에는 title attribute 를 사용해서 설명을 입력함
+   -->
+  <input type="text" title="전화번호 가운데 자리" />
+  <input type="text" title="전화번호 끝자리" />
+</div>
+
+</body>
+</html>

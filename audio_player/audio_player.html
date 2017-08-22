@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Player</title>
+  <script src="lib/jquery-3.2.1.min.js"></script>
+  <style>
+    .btn{
+      display:block;
+      width:128px;
+      height:128px;
+      background:url(images/181656-music-player-icons.png) no-repeat -436px -30px;
+      text-indent: -9999em;
+      border:0;
+    }
+
+    .btn.pause{
+      background-position:-436px -218px;
+    }
+
+    .progress{
+      /*width:100px;*/
+      height:50px;
+      border:1px solid red;
+    }
+
+    .bar{
+      width:0;
+      height:50px;
+      background: skyblue;
+      transition:all .5s linear; /*linear 점점 늘어나는 모습*/
+    }
+  </style>
+  <script>
+    /*
+    *
+    * 어떤 대상을 제어할 때 찾아야 할 것 3가지
+    *
+    * 1) 객체( object )
+    *
+    * 2) 함수( API )
+    *
+    * 3) 프로퍼티( 객체에 대한 정보 )
+    *
+    * */
+
+    $(function(){
+
+      function digit( time ){
+
+        var fixDigit;
+
+        if( time < 10 ){
+          fixDigit = '0' + time;
+        } else {
+          fixDigit = time;
+        }
+
+        return fixDigit;
+
+      }
+
+      var $audio = $('.audio')[0];
+
+      $('.audio').on('loadedmetadata', function(){  /*loadedmetadata*/
+        console.log( $audio.duration );
+        console.log( Math.floor($audio.duration/60) + ':' + Math.floor($audio.duration % 60) ); /*Math.floor() 소수점을 없애주는 함수*/
+      });
+
+      $('.audio').on('timeupdate', function(){ /*timeupdate*/
+        // 진행 시간을 분:초 형태로 표시
+        var time = digit(Math.floor($audio.currentTime/60)) + ':' + digit(Math.floor($audio.currentTime % 60));
+        $('.currentTime').html( time );
+
+        // 진행 바 표시
+        var percent = $audio.currentTime / $audio.duration*100;
+
+        $('.percent .bar').css({
+          width : percent + '%'
+        });
+      });
+
+      $('.btn').data({'play' : false}).on('click', function(){
+
+        if( $(this).data('play') == false ){
+
+          $(this).removeClass('play').addClass('pause');
+          $audio.play();
+          $(this).data({'play' : true});
+
+        } else {
+
+          $(this).removeClass('pause').addClass('play');
+          $audio.pause();
+          $(this).data({'play' : false});
+
+        }
+      });
+
+    });
+  </script>
+</head>
+<body>
+
+<audio class="audio">
+  <source src="audio/audio.mp3" type="audio/mpeg" />
+</audio>
+
+<div class="progress">
+  <div class="bar"></div>
+</div>
+
+<div class="currentTime">00:00</div>
+
+<button type="button" class="btn play">play</button>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>팝업 창 비교</title>
+
+  <script>
+    /*
+      window.open( 팝업창내용파일, 팝업창이름, 옵션 )
+     */
+    function openPopup(){
+      window.open('popup_content.html', '', 'width=200, height=300');
+    }
+
+  </script>
+
+</head>
+<body>
+
+<header>
+  <h1>로고</h1>
+  <nav>
+    <h1>메인메뉴</h1>
+    <ul>
+      <li>메뉴1</li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+
+  <h1>둥근귀코끼리</h1>
+
+  <section>
+    <h1>소개</h1>
+    <p>이번 섹션에선, 잘 알려지지 않은 둥근귀코끼리에 관해 알아보겠습니다.</p>
+  </section>
+
+  <!-- onclick attribute : 태그에 직접 입력하는 클릭 이벤트 -->
+  <!-- return false : 앵커 태그를 클릭했을 때 # 때문에 페이지 맨위로 이동하는것을 막아줌 -->
+  <a href="#" onclick="openPopup();return false;">아프리카코끼리, 아시아코끼리와의 비교</a>
+
+  <section>
+    <h1>서식지</h1>
+    <p>둥근귀코끼리는 나무에 살지는 않고 나무들 사이에 그 서식지를 이루고 있습니다.</p>
+  </section>
+
+  <aside>
+    <h1>광고 구역</h1>
+  </aside>
+
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+</section>
+
+<footer>
+  <h1>푸터영역</h1>
+  <p>(c) 2013 회사 이름</p>
+</footer>
+
+</body>
+</html>

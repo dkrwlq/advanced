@@ -1,0 +1,488 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+  display: block;
+}
+html{
+  overflow-y:scroll; /*스크롤이 컨텐츠 내용에 의해 세로 스크롤이 생겼을때 가로길이 때문에 레이아웃이 깨지는것을 방지(처음부터 생겨있게 해줌)*/
+}
+body {
+  line-height: 1;
+  font-family: 'Nanum Barun Gothic', sans-serif;
+  color:#000;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a{
+  text-decoration: none;
+  color:#000;
+}
+
+
+
+#skipnavigation a{
+  position:absolute;
+  left:-99999%;
+}
+
+#skipnavigation a:focus{
+  display: block;
+  width:100%;
+  height:30px;
+  text-align:center;
+  line-height:30px;
+  background:midnightblue;
+  color:#fff;
+  top:0;
+  left:0;
+}
+
+.inner-box{
+  width:1280px;
+  margin:0 auto;
+}
+
+.header{
+  height:62px;
+  padding:15px 0 12px;
+  box-sizing: border-box;
+  min-width: 1280px;
+}
+
+.header:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.logo{
+  float:left;
+}
+
+.gnb{
+  float:right;
+  margin-top: 17px;
+  font-family: 'Open Sans', sans-serif;
+  font-size:18px;
+  font-weight: 400;
+  font-style:italic;
+}
+
+.gnb-depth1:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.gnb-depth1-item{
+  float:left;
+  margin-right:100px;
+  position: relative;
+}
+
+.gnb-depth1-link{
+  text-decoration: none;
+  color:#f59678;
+}
+
+.gnb-depth1-item:last-child{
+  margin-right: 0;
+}
+
+.gnb-depth2{
+  display: none;
+  position: absolute;
+  top:22px;
+  right:-6px;
+  padding:10px 38px 10px 10px;
+}
+
+.gnb-depth2.on{
+  display:block;
+}
+
+.gnb-depth2-item:first-child{
+  margin-bottom:9px;
+}
+
+.gnb-depth2:after{
+  content:"";
+  display: block;
+
+  position:absolute; /*position:absolute 를 해야 height 가100%가 된다*/
+  width:100%;
+  height:100%;
+  background: #999;
+  top:0;
+  left:0;
+  z-index:0;
+  opacity:0.4;
+}
+
+.gnb-depth2-link{
+  color:#f59678;
+  text-decoration: none;
+  position:relative; /*z-index 가 적용되야 하기 때문에 position 을 준다.*/
+  z-index: 10;
+}
+
+.visual-image{
+  width:1280px;
+  height:372px;
+  text-indent:-99999em;
+  background: url(images/visual_03.png) no-repeat;
+}
+
+.visual-image>*{
+  position:absolute;
+  left:-99999em;
+}
+
+.text-section{
+  padding:125px 0 100px;
+  min-width: 1280px;
+}
+
+.text-section:after{
+  content:"";
+  display: block;
+  clear: both;
+}
+
+.article{
+  width:410px;
+  height:310px;
+  padding-left:7px;
+  border:2px solid #f59678;
+  box-sizing: border-box;
+  float:left;
+  margin-right:25px;
+}
+
+.article:last-child{
+  margin-right:0;
+  border:0;
+}
+
+.article-heading{
+  height:20px;
+  background: url(images/article_heading.png) no-repeat;
+  text-indent:-99999em;
+}
+
+.customer-heading{
+  margin-top:12px;
+  width:195px;
+}
+
+.message-heading{
+  margin-bottom:7px;
+  width:149px;
+  background-position:0 -18px;
+}
+
+.notice-heading{
+  margin-top:30px;
+  width:72px;
+  background-position:0 -38px;
+}
+
+.bank-heading{
+  margin-top:38px;
+  width:180px;
+  background-position:0 -60px;
+}
+
+.contact-heading{
+  width:63px;
+  background-position:0 -79px;
+}
+
+.family-site-heading{
+  width:149px;
+  background-position:0 -98px;
+}
+
+.time-wrap{
+  margin:16px 0 0 10px;
+}
+
+.time{
+  margin-bottom:17px;
+}
+
+.time:last-child{
+  margin-bottom: 13px;
+}
+
+.message-wrap{
+  margin-left: 10px;
+}
+
+.input-wrap-name{
+  position:relative;
+  margin:7px 0;
+}
+
+.input-style.name{
+  position:absolute;
+  top:-3px;
+  left:40px;
+}
+
+.input-wrap-content{
+
+}
+
+.input-style{
+  border: 1px solid #000;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.input-style.name{
+  width: 150px;
+  height:20px;
+  float:left;
+}
+
+.input-style.content{
+  width:378px;
+  height:85px;
+  margin-top:7px;
+}
+
+.notice{
+  position:relative;
+}
+
+.notice-list{
+  margin:18px 0 0 23px;
+}
+
+.notice-list-item{
+  margin-bottom:15px;
+}
+
+.notice-list-link{  /* 밑에 있는 5가지가 모두 적용되야 text-overflow 가 적용된다. */
+  display: block;
+  width:350px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notice-list-link:hover{
+  color:orange;
+  text-decoration: underline; /* 색 구분이 어려운 사람들의 위해 접근성을 고려해야함*/
+}
+
+.btn-icon{
+  display: block;
+  width:22px;
+  height:19px;
+  background: url(images/btn_icon.png) no-repeat;
+  text-indent:-99999em;
+  position: absolute;
+  top:0;
+  left:85px;
+}
+
+.btn{
+  display: block;
+  height:24px;
+  line-height: 18px;
+  box-sizing: border-box;
+  border: 2px solid #313131;
+  background: #fff;
+}
+
+.instargram{
+  text-indent:-99999em;
+}
+
+.instargram-logo{
+  height:23px;
+  background: url(images/instagram_logo.png) no-repeat;
+}
+
+.insta-pics{
+  margin:30px 0 23px 0;
+}
+
+.insta-pics:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.insta-box{
+  float:left;
+}
+
+.insta-img{
+  width:100%;
+  display: block;
+}
+
+.article-contact{
+  position:relative;
+  margin-bottom:16px;
+}
+
+.content-popup{
+  position:absolute;
+  top:-4px;
+  left:105px;
+}
+
+.article-family-site{
+  position:relative;
+}
+
+.select-wrap{
+  width:300px;
+  height:24px;
+  margin-top:10px;
+}
+
+.select-box{
+  position:absolute;
+  left:-99999%;
+}
+
+.select-design{
+  position:relative;
+}
+
+.select-design-button{
+  display:block;
+  width:100%;
+  height:24px;
+  border: 2px solid #313131;
+  background: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+  color:#313131;
+  padding-right: 28px;
+  position:relative;
+  cursor: pointer;
+  text-align: left;
+}
+
+.select-design-button:after{
+  content:"";
+  display: block;
+  width:28px;
+  height:24px;
+  background:#fff url(images/select_arrow.png) no-repeat 4px 6px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.select-design-list{
+  border:2px solid #313131;
+  background: #fff;
+  position:absolute;
+  top:22px;
+  left:0;
+  display:none;
+}
+
+.select-design-list.on{
+  display:block;
+}
+
+.select-design-list-item{
+  border-bottom:2px solid #313131;
+  overflow: hidden;
+}
+
+.select-design-list-item:last-child{
+  border-bottom:0;
+}
+
+.select-design-list-item-button{
+  border:0;
+  background: 0;
+  color: #313131;
+  white-space: nowrap;
+  padding:5px;
+  cursor: pointer;
+  display: block; /*블럭으로 해도 가로길이가 부모를 따라가지 않는다. 버튼의 특징*/
+  width:100%;
+  text-align: left; /*정해주지 않으면 가운데로 간다.*/
+}
+
+.select-design-list-item-button:hover{
+  background: #ddd;
+}
+
+.select-radio{
+  position:absolute;
+  left:-9999%;
+}
+
+.select-radio-label{
+  border:0;
+  background: 0;
+  color: #313131;
+  white-space: nowrap;
+  padding:5px;
+  cursor: pointer;
+  display: block; /*블럭으로 해도 가로길이가 부모를 따라가지 않는다. 버튼의 특징*/
+  width:100%;
+  text-align: left; /*정해주지 않으면 가운데로 간다.*/
+}
+
+.family-site-select{
+
+}
+
+.family-site-move{
+  width:47px;
+  height:24px;
+  position:absolute;
+  top:30px;
+  left:310px;
+}
