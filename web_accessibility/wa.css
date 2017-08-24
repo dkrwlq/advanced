@@ -460,7 +460,19 @@ a{
 
 .select-radio{
   position:absolute;
-  left:-9999%;
+  left:-99999%;
+}
+
+.select-radio:focus + .select-radio-label{ /*라디오 버튼이 안보이는 상황이라 라디오버튼에 포커스가 들어갔을때 화면에 보이게 해주는*/
+  outline: 1px solid #fff;
+  color:#fff;
+  background: #666666;
+}
+
+.select-radio-label:hover{
+  outline: 1px solid #fff;
+  color:#fff;
+  background: #666666;
 }
 
 .select-radio-label{
